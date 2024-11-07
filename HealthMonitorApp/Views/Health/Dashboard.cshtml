@@ -1,0 +1,46 @@
+﻿@model List<HealthMonitorApp.Models.HealthRecord>
+
+@{
+    ViewBag.Title = "Health Dashboard";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (ViewBag.Alerts != null)
+{
+    // Use a type-safe cast for the ViewBag.Alerts
+    var alerts = ViewBag.Alerts as List<string>;
+    if (alerts != null && alerts.Any())
+    {
+        <div class="alert alert-warning">
+            <ul>
+                @foreach (var alert in alerts)
+                {
+                    <li>@alert</li>
+                }
+            </ul>
+        </div>
+    }
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Heart Rate</th>
+            <th>Blood Pressure</th>
+            <th>Weight</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var record in Model)
+        {
+            <tr>
+                <td>@record.DateRecorded.ToString("yyyy-MM-dd")</td>
+                <td>@record.HeartRate</td>
+                <td>@record.BloodPressureSystolic/@record.BloodPressureDiastolic</td>
+                <td>@record.Weight</td>
+            </tr>
+        }
+    </tbody>
+</table>

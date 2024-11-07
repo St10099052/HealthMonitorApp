@@ -1,0 +1,42 @@
+﻿@model HealthMonitorApp.Models.HealthRecord
+
+@{
+    ViewBag.Title = "Add Health Record";
+}
+
+<h2>Add New Health Record</h2>
+
+@using (Html.BeginForm("AddHealthRecord", "Health", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.UserId)
+        @Html.TextBoxFor(model => model.UserId, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DateRecorded)
+        @Html.TextBoxFor(model => model.DateRecorded, "{0:yyyy-MM-dd}", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.HeartRate)
+        @Html.TextBoxFor(model => model.HeartRate, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BloodPressureSystolic)
+        @Html.TextBoxFor(model => model.BloodPressureSystolic, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BloodPressureDiastolic)
+        @Html.TextBoxFor(model => model.BloodPressureDiastolic, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Weight)
+        @Html.TextBoxFor(model => model.Weight, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html >
+<html lang="en" >
+<head >
+<meta charset="utf-8" / >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" / >
+<title > @ViewData["Title"] - HealthMonitorApp</title >
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" / >
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" / >
+<link rel="stylesheet" href="~/HealthMonitorApp.styles.css" asp-append-version="true" / >
+<!-- Additional styles -->
+<style >
+/* Set the background image */
+body {
+    background-image: url('https://example.com/path-to-your-image.jpg'); /* Path to your background image */
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Fix the background image during scrolling */
+    font-family: Arial, sans-serif;
+    color: white; /* Ensure text is visible on top of the background */
+}
+
+/* Header (Navbar) */
+header {
+    background-color: rgba(0, 123, 255, 0.8); /* Semi-transparent header for better contrast */
+    color: white;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: white !important;
+}
+
+.navbar-nav .nav-link {
+    color: black !important;
+}
+
+    .navbar-nav .nav-link:hover {
+        background-color: deepskyblue !important;
+        border-radius: 5px;
+    }
+
+.navbar-toggler-icon {
+    background-color: white;
+}
+
+/* Main container */
+.container {
+    margin-top: 30px;
+}
+
+/* Footer */
+footer {
+    background-color: rgba(52, 58, 64, 0.9); /* Semi-transparent footer */
+    color: white;
+    padding: 20px 0;
+}
+
+    footer a {
+        color: #ffffff;
+    }
+
+        footer a:hover {
+            color: #f1f1f1;
+            text-decoration: underline;
+        }
+
+/* Error page styling */
+.error-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+    .error-container h1 {
+        font-size: 48px;
+        color: #e74c3c;
+    }
+
+    .error-container h2 {
+        font-size: 32px;
+        color: #f39c12;
+    }
+
+    .error-container p {
+        font-size: 18px;
+        color: #555;
+    }
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+</style >
+</head >
+<body >
+<header >
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light" >
+<div class="container-fluid" >
+<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" > HealthMonitorApp</a >
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+aria-expanded="false" aria-label="Toggle navigation" >
+<span class="navbar-toggler-icon" > </span >
+</button >
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between" >
+<ul class="navbar-nav flex-grow-1" >
+<li class="nav-item" >
+<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" > Home</a >
+</li >
+<li class="nav-item" >
+<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy" > Privacy</a >
+</li >
+<li class="nav-item" >
+<a class="nav-link text-dark" asp-controller="Health" asp-action="Dashboard" > Health Dashboard</a >
+</li >
+</ul >
+</div >
+</div >
+</nav >
+</header >
+
+<div class="container" >
+<main role="main" class="pb-3" >
+@RenderBody()
+</main >
+</div >
+
+<footer class="footer text-muted" >
+<div class="container" >
+&copy; 2024 - HealthMonitorApp - <a asp-area="" asp-controller="Home" asp-action="Privacy" > Privacy</a >
+</div >
+</footer >
+
+<script src="~/lib/jquery/dist/jquery.min.js" > </script >
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" > </script >
+<script src="~/js/site.js" asp-append-version="true" > </script >
+@await RenderSectionAsync("Scripts", required: false)
+</body >
+</html >
